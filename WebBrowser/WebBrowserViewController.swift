@@ -169,9 +169,6 @@ extension WebBrowserViewController {
         webView.uiDelegate = self
         webView.isMultipleTouchEnabled = true
         webView.scrollView.alwaysBounceVertical = true
-        if #available(iOS 11.0, *) {
-            webView.scrollView.contentInsetAdjustmentBehavior = .never
-        }
         view.addSubview(webView)
 
         webView.addObserver(self, forKeyPath: WebBrowser.estimatedProgressKeyPath, options: .new, context: &WebBrowser.estimatedProgressContext)
